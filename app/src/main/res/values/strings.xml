@@ -2,4 +2,11 @@
     <string name="app_name">FloodReportApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="danger">Darurat</string>
+    <string name="list_laporan">Daftar Laporan Bencana Masyarakat!</string>
+    <string name="maps">maps</string>
+    <string name="locate_with_maps">Lokasi Dalam Maps</string>
+    <string name="report">report</string>
+    <string name="buat_laporan_bencana">Buat Laporan Bencana</string>
+    <string name="edit_name">edit_name</string>
 </resources>

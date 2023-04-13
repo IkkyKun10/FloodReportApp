@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -25,46 +24,44 @@
                 android:padding="16dp">
 
                 <ImageView
+                    android:id="@+id/menu_drawer_btn"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:contentDescription="@string/menu_drawer"
                     android:padding="10dp"
                     android:src="@drawable/menu" />
 
                 <Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.8" />
 
-                <LinearLayout
+                <TextView
+                    style="@style/TextAppearance.AppCompat.SearchResult.Title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical">
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/flood_app_report"
+                    android:textColor="#424242"
+                    android:textSize="24sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="California"
-                        android:textColor="#424242"
-                        android:textSize="17sp" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_marginLeft="3dp"
-                        android:src="@drawable/ic_keyboard_arrow_down_24dp" />
-                </LinearLayout>
+                <!--                    <ImageView-->
+                <!--                        android:layout_width="20dp"-->
+                <!--                        android:layout_height="20dp"-->
+                <!--                        android:layout_marginLeft="3dp"-->
+                <!--                        android:src="@drawable/ic_keyboard_arrow_down_24dp" />-->
 
                 <Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_centerInParent="true"
-                    android:padding="6dp"
-                    android:src="@drawable/ic_search_black_24" />
+                <!--                <ImageView-->
+                <!--                    android:layout_width="40dp"-->
+                <!--                    android:layout_height="40dp"-->
+                <!--                    android:layout_centerInParent="true"-->
+                <!--                    android:padding="6dp"-->
+                <!--                    android:src="@drawable/ic_search_black_24" />-->
 
 
             </LinearLayout>
@@ -126,9 +123,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="App Developer"
                             android:textColor="#424242"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            tools:text="Lokasi" />
 
                         <ImageView
                             android:layout_width="5dp"
@@ -136,14 +133,15 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
                             android:alpha="0.6"
+                            android:contentDescription="TODO"
                             android:src="@drawable/circle_dark_grey_fil" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="345 friends"
                             android:textColor="#424242"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            tools:text="Gender" />
 
                     </LinearLayout>
 
@@ -284,7 +282,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"/>
+                android:layout_marginTop="50dp" />
 
         </LinearLayout>
 
@@ -296,7 +294,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:backgroundTint="@color/orange"
-        app:srcCompat="@drawable/ic_question_mark_24dp"
-        android:contentDescription="@string/about_us"/>
+        android:contentDescription="@string/about_us"
+        app:srcCompat="@drawable/ic_question_mark_24dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

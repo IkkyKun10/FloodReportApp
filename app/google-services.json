@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "669147564428",
+    "project_id": "floodreportapp",
+    "storage_bucket": "floodreportapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:669147564428:android:a9d7d58bfe748ec4db2ea9",
+        "android_client_info": {
+          "package_name": "com.riezki.floodreportapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "669147564428-s57m28ta67mo8v9nd6o9p0lq0sooph74.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.riezki.floodreportapp",
+            "certificate_hash": "3d322f320ff998e91f1a1fa2fc453bac4d42ecba"
+          }
+        },
+        {
+          "client_id": "669147564428-525cf033hl17jba86pca60q9aqusd01f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZT-F-CCUCG-nbHFK8K0XkmbzRGzffUh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "669147564428-525cf033hl17jba86pca60q9aqusd01f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

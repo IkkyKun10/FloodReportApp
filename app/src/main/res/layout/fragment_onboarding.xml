@@ -1,14 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.auth.onboarding.OnboardingFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.auth.onboarding.OnboardingFragment"
+    android:orientation="vertical"
+    android:background="@color/onboarding_bg_clr">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <io.github.florent37.shapeofview.shapes.ArcView
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            app:layout_constraintTop_toTopOf="parent"
+
+            app:shape_arc_height="50dp"
+            app:shape_arc_position="bottom">
+
+            <com.flaviofaria.kenburnsview.KenBurnsView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/flood_img"/>
+
+        </io.github.florent37.shapeofview.shapes.ArcView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/welcome_obd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:fontFamily="@font/kavoon"
+        android:paddingTop="12dp"
+        android:text="Welcome to \nSiagApp"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        />
+
+    <TextView
+        android:id="@+id/desc_obd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Laporkan bencana di sekitarmu! \nPahami dan lakukan penanggulangan \npertama"
+        android:layout_marginStart="40dp"
+        android:textSize="18sp"
+        android:textColor="#606060"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:text="@string/get_started"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        app:backgroundTint="@color/teal_700"
+        android:background="@drawable/bg_onboarding"
+        android:layout_gravity="end"/>
+</LinearLayout>

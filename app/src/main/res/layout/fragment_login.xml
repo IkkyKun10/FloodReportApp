@@ -89,6 +89,7 @@
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
+                app:passwordToggleEnabled="true"
                 app:boxStrokeColor="@color/color_violet">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -96,15 +97,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="@string/txt_password_hint"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textPassword" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
+                android:id="@+id/register_btn_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="24dp"
-                android:text="@string/recovery_password_text"
+                android:text="@string/register_btn_txt"
                 android:textAlignment="center" />
 
             <LinearLayout

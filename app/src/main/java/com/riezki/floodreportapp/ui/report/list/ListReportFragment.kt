@@ -1,16 +1,15 @@
-package com.riezki.floodreportapp.ui.auth.onboarding
+package com.riezki.floodreportapp.ui.report.list
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.riezki.floodreportapp.R
-import com.riezki.floodreportapp.databinding.FragmentOnboardingBinding
+import com.riezki.floodreportapp.databinding.FragmentListReportBinding
 
-class OnboardingFragment : Fragment() {
+class ListReportFragment : Fragment() {
 
-    private var _binding: FragmentOnboardingBinding? = null
+    private var _binding: FragmentListReportBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -18,7 +17,7 @@ class OnboardingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentOnboardingBinding.inflate(inflater, container, false)
+        _binding = FragmentListReportBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -32,5 +31,4 @@ class OnboardingFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

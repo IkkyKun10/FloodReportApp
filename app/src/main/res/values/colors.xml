@@ -14,4 +14,6 @@
     <color name="color_violet">#8813e4</color>
     <color name="color_green_light">#5ff0f7</color>
     <color name="login_bg">#D3D3D3</color>
+    <color name="grey_transparant">#48000000</color>
+    <color name="onboarding_bg_clr">#E8E8E8</color>
 </resources>

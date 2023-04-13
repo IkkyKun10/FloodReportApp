@@ -14,14 +14,19 @@
     <string name="email_text">Email</string>
     <string name="password_text">Password</string>
     <string name="banner_login">banner_login</string>
-    <string name="login_text_button">Masuk</string>
+    <string name="login_text_button">Login</string>
     <string name="txt_password_hint">Enter your password</string>
     <string name="txt_email_hint">Enter your Email</string>
-    <string name="recovery_password_text">Dont Remember Password? Recovery It!</string>
+    <string name="register_btn_txt">Dont have account? <font fgcolor="#0035f2"> Register here!</font> </string>
     <string name="or_login_with">Or Login With</string>
     <string name="google">Google</string>
     <string name="create_account_txt">Create \nAccount</string>
     <string name="enter_your_name">Enter your name</string>
     <string name="daftar">Daftar</string>
     <string name="re_password">Re-Password</string>
+    <string name="image_report_txt">Image Report</string>
+    <string name="flood_app_report">Flood App Report</string>
+    <string name="menu_drawer">Menu Drawer</string>
+    <string name="get_started">Get Started</string>
+    <string name="login_text">Already have an account? <font fgcolor="#0035f2"> Login here!</font> </string>
 </resources>

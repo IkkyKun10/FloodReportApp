@@ -1,5 +1,6 @@
 package com.riezki.floodreportapp.ui.auth.login
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Patterns
 import android.view.LayoutInflater
@@ -7,8 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
+import com.riezki.floodreportapp.R
 import com.riezki.floodreportapp.databinding.FragmentLoginBinding
+import com.riezki.floodreportapp.databinding.LoadingPageBinding
 
 class LoginFragment : Fragment() {
 
@@ -31,16 +36,24 @@ class LoginFragment : Fragment() {
 
         auth = FirebaseAuth.getInstance()
         binding.registerBtnTxt.setOnClickListener {
-
+            view.findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
         }
 
         binding.buttonLogin.setOnClickListener {
             if (validateLogin()) {
+                showLoading(true)
                 signInFirebase(
                     binding.emailEdit.text.toString(),
                     binding.passEdt.text.toString()
                 )
+                showLoading(false)
+                view.findNavController().navigate(R.id.action_loginFragment_to_mainActivity)
+                activity?.finish()
             }
+        }
+
+        binding.btnSignGoogle.setOnClickListener {
+            Snackbar.make(view, "Maaf, fitur belum tersedia!", Snackbar.LENGTH_SHORT).show()
         }
     }
 
@@ -79,14 +92,21 @@ class LoginFragment : Fragment() {
     }
 
     private fun signInFirebase(email: String, pass: String) {
+
         auth.signInWithEmailAndPassword(email, pass)
             .addOnCompleteListener(requireActivity()) {
                 if (it.isSuccessful) {
 
+                    Toast.makeText(context, getString(R.string.login_berhasil), Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(context, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
+
+                    Snackbar.make(binding.root, "${it.exception?.message}", Snackbar.LENGTH_SHORT).show()
                 }
             }
+    }
+
+    private fun showLoading(state: Boolean) {
+        if (state) binding.progressBar.visibility = View.VISIBLE else View.GONE
     }
 
     override fun onDestroyView() {

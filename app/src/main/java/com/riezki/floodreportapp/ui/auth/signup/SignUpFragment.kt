@@ -1,17 +1,25 @@
 package com.riezki.floodreportapp.ui.auth.signup
 
+import android.app.AlertDialog
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.view.isEmpty
+import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
 import com.riezki.floodreportapp.R
 import com.riezki.floodreportapp.databinding.FragmentSignUpBinding
+import com.riezki.floodreportapp.databinding.LoadingPageBinding
 
 class SignUpFragment : Fragment() {
 
@@ -35,15 +43,20 @@ class SignUpFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
 
         binding.loginBtnTxt.setOnClickListener {
-
+            view.findNavController().navigate(R.id.action_signUpFragment_to_loginFragment)
         }
 
         binding.buttonRegister.setOnClickListener {
             if (validateSignUp()) {
+                showLoading(true)
                 registerFirebase(
-                    binding.emailEdit.text.toString(),
-                    binding.passEdt.text.toString()
+                    view,
+                    binding.nameEdit.text.toString().trim(),
+                    binding.emailEdit.text.toString().trim(),
+                    binding.numberEdit.text.toString().trim(),
+                    binding.repassEdt.text.toString().trim()
                 )
+                showLoading(false)
             }
         }
     }
@@ -52,69 +65,99 @@ class SignUpFragment : Fragment() {
         with(binding) {
             return when {
                 nameEdit.text?.isEmpty() == true -> {
-                    nameEdit.error = "Silahkan isi nama terlebih dahulu!"
+                    nameInput.error = "Silahkan isi nama terlebih dahulu!"
                     false
                 }
 
                 emailEdit.text?.isEmpty() == true -> {
-                    emailEdit.error = "Silahkan isi email terlebih dahulu!"
+                    emailInput.error = "Silahkan isi email terlebih dahulu!"
                     false
                 }
 
+//                numberEdit.text?.isEmpty() == true && numberEdit.text.toString().length <= 10-> {
+//                    numberEdit.requestFocus()
+//                    numberInput.error = "Nomor telepon tidak sesuai"
+//                    false
+//                }
+
                 passEdt.text?.isEmpty() == true -> {
-                    passEdt.error = "Silahkan isi password terlebih dahulu!"
+                    paswordInput.error = "Silahkan isi password terlebih dahulu!"
                     false
                 }
 
                 repassEdt.text?.isEmpty() == true -> {
-                    repassEdt.error = "Silahkan isi password terlebih dahulu!"
+                    repaswordInput.error = "Silahkan isi password terlebih dahulu!"
                     false
                 }
 
                 (!Patterns.EMAIL_ADDRESS.matcher(emailEdit.text.toString()).matches()) -> {
-                    emailEdit.error = "Email tidak valid!"
                     emailEdit.requestFocus()
+                    emailInput.error = "Email tidak valid!"
                     false
                 }
 
                 passEdt.text.toString().length < 6 -> {
-                    passEdt.error = "Minimal password 6 karakter"
                     passEdt.requestFocus()
+                    paswordInput.error = "Minimal password 6 karakter"
                     false
                 }
 
                 repassEdt.text.toString().length < 6 -> {
-                    passEdt.error = "Minimal password 6 karakter"
-                    passEdt.requestFocus()
+                    repassEdt.requestFocus()
+                    repaswordInput.error = "Minimal password 6 karakter"
                     false
                 }
 
                 (repassEdt.text.toString() != passEdt.text.toString()) -> {
-                    repassEdt.error = "Password tidak sama"
                     repassEdt.requestFocus()
+                    repaswordInput.error = "Password tidak sama"
                     false
                 }
 
                 else -> {
-                    nameEdit.error = null
-                    emailEdit.error = null
-                    passEdt.error = null
-                    repassEdt.error = null
+                    nameInput.error = null
+                    emailInput.error = null
+                    //numberInput.error = null
+                    paswordInput.error = null
+                    repaswordInput.error = null
                     true
                 }
             }
         }
     }
 
-    private fun registerFirebase(email: String, pass: String) {
+    private fun registerFirebase(view: View, username: String, email: String, numberPhone: String, pass: String) {
+
         auth.createUserWithEmailAndPassword(email, pass)
             .addOnCompleteListener(requireActivity()) {
                 if (it.isSuccessful) {
 
+                    val profilUpdate = userProfileChangeRequest {
+                        displayName = username
+
+                    }
+                    auth.currentUser?.updateProfile(profilUpdate)
+                        ?.addOnCompleteListener {task ->
+                            if (task.isSuccessful) {
+                                Log.d(TAG, "Username berhasil ditambahkan")
+                            }
+                        }
+                    requireActivity().onBackPressed()
+                    Snackbar.make(binding.root, getString(R.string.register_berhasil), Snackbar.LENGTH_SHORT).show()
+                    Toast.makeText(context, getString(R.string.register_berhasil), Toast.LENGTH_SHORT).show()
                 } else {
+
                     Toast.makeText(context, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
             }
+            .addOnFailureListener {
+
+                Toast.makeText(context, it.message.toString(), Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun showLoading(state: Boolean) {
+        if (state) binding.progressBar.visibility = View.VISIBLE else View.GONE
     }
 
     override fun onDestroyView() {

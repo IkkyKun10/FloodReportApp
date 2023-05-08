@@ -34,16 +34,17 @@
                 <Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.8" />
+                    android:layout_weight="0.9" />
 
                 <TextView
                     style="@style/TextAppearance.AppCompat.SearchResult.Title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:text="@string/flood_app_report"
-                    android:textColor="#424242"
-                    android:textSize="24sp" />
+                    android:fontFamily="@font/titan_one"
+                    android:text="SiagApp"
+                    android:textColor="#673AB7"
+                    android:textSize="32sp" />
 
                 <!--                    <ImageView-->
                 <!--                        android:layout_width="20dp"-->
@@ -63,6 +64,13 @@
                 <!--                    android:padding="6dp"-->
                 <!--                    android:src="@drawable/ic_search_black_24" />-->
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/logout_btn"
+                    android:src="@drawable/ic_logout"
+                    />
+
 
             </LinearLayout>
 
@@ -81,7 +89,7 @@
                     android:id="@+id/profile_image"
                     android:layout_width="55dp"
                     android:layout_height="55dp"
-                    android:src="@drawable/photo_profil" />
+                    android:src="@drawable/ic_account_circle" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -95,15 +103,17 @@
                         android:gravity="center_vertical">
 
                         <TextView
+                            android:id="@+id/username_profile"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:alpha="0.8"
-                            android:text="Sanskar Tiwari"
+                            android:text="@string/username"
                             android:textColor="#59408F"
                             android:textSize="17sp"
                             android:textStyle="bold" />
 
                         <ImageView
+                            android:id="@+id/edit_profile"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_marginStart="10dp"
@@ -125,7 +135,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="#424242"
                             android:textSize="14sp"
-                            tools:text="Lokasi" />
+                            android:text="@string/indonesia" />
 
                         <ImageView
                             android:layout_width="5dp"
@@ -141,7 +151,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="#424242"
                             android:textSize="14sp"
-                            tools:text="Gender" />
+                            android:text="@string/number_phone" />
 
                     </LinearLayout>
 
@@ -167,9 +177,10 @@
                     android:textSize="25sp" />
 
                 <TextView
+                    android:id="@+id/username_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Riezki!"
+                    android:text="@string/riezki"
                     android:textColor="#424242"
                     android:textSize="25sp"
                     android:textStyle="bold" />
@@ -202,8 +213,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="15dp"
-                        android:text="Android DevFest 2020"
+                        android:layout_marginTop="10dp"
+                        android:text="Laporkan Kebencanaan!"
                         android:textColor="@color/white"
                         android:textSize="28sp"
                         android:textStyle="bold"
@@ -214,8 +225,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="Meet up with more developer coaching"
-                        android:textColor="@color/white"
+                        android:paddingTop="8dp"
+                        android:text="Tingkatkan waspada dan update informasi bersama SiagApp"
+                        android:textColor="#DCDCDC"
                         android:textSize="14sp"
                         android:transitionName="desc" />
 
@@ -266,6 +278,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/add_report_main"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -289,12 +302,14 @@
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_report"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:backgroundTint="@color/orange"
+        app:fabSize="normal"
         android:contentDescription="@string/about_us"
-        app:srcCompat="@drawable/ic_question_mark_24dp" />
+        app:srcCompat="@drawable/ic_add_circle_outline_24dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

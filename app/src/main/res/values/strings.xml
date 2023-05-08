@@ -29,4 +29,26 @@
     <string name="menu_drawer">Menu Drawer</string>
     <string name="get_started">Get Started</string>
     <string name="login_text">Already have an account? <font fgcolor="#0035f2"> Login here!</font> </string>
+    <string name="gambar_banjir">Gambar Banjir</string>
+    <string name="take_picture">Ambil Gambar</string>
+    <string name="welcome_txt">Welcome to \nSiagApp</string>
+    <string name="register_berhasil">Register Berhasil</string>
+    <string name="login_berhasil">Login Berhasil</string>
+    <string name="username">Username</string>
+    <string name="riezki">%s</string>
+    <string name="ok">Ok</string>
+    <string name="fitur_not_exist">Mohon maaf, Fitur saat ini sedang dalam pengembangan.</string>
+    <string name="text_onboarding">Laporkan bencana di sekitarmu! \nPahami dan lakukan penanggulangan \npertama</string>
+    <string name="send">Kirim</string>
+    <string name="description_report">Deskripsikan Kejadian ...</string>
+    <string name="desc_location">Descripsi Lokasi</string>
+    <string name="tuliskan_lokasi">Tuliskan Lokasi</string>
+    <string name="location">Location</string>
+    <string name="buat_laporan">Buat Laporan</string>
+    <string name="number_phone">number_phone</string>
+    <string name="indonesia">Indonesia</string>
+    <string name="enter_number_phone">Masukkan nomor telepon</string>
+    <string name="nomor_telepon">Nomor Telepon</string>
+    <string name="nama_pelapor">Nama Pelapor</string>
+    <string name="masukkan_nama_anda">Masukkan nama anda</string>
 </resources>

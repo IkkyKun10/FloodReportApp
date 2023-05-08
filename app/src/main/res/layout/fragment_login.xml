@@ -11,6 +11,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/progressBar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:lottie_rawRes="@raw/loading_3"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_speed="1.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="gone"/>
+
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
@@ -145,6 +159,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/btn_sign_google"
                 android:orientation="horizontal"
                 android:layout_margin="8dp"
                 android:gravity="center"
@@ -154,6 +169,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     app:srcCompat="@drawable/google"
+                    android:layout_marginEnd="8dp"
                     android:contentDescription="@string/google"
                     />
 
@@ -173,7 +189,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="@string/login_text_button" />
+                android:text="@string/login_text_button"
+                />
 
             <View
                 android:layout_width="match_parent"

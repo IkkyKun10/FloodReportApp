@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:elevation="14dp"
+    android:padding="14dp"
+    android:id="@+id/layout_not_exist"
+    android:background="@drawable/bg_page_loading">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/not_exist_id"
+        app:lottie_rawRes="@raw/not_exist"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/not_exist_id"
+        android:textAlignment="center"
+        android:layout_margin="14dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="@string/fitur_not_exist"
+        android:id="@+id/text_not_exist"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/text_not_exist"
+        app:layout_constraintStart_toStartOf="@+id/text_not_exist"
+        app:layout_constraintTop_toBottomOf="@id/text_not_exist"
+        android:layout_marginTop="8dp"
+        android:text="@string/ok"
+        android:textAllCaps="false"
+        android:fontFamily="@font/alfa_slab_one"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

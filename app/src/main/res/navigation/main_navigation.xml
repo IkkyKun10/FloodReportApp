@@ -9,7 +9,14 @@
         android:id="@+id/homeFragment"
         android:name="com.riezki.floodreportapp.ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_createReportFragment"
+            app:destination="@id/createReportFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_listReportFragment"
+            app:destination="@id/listReportFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.riezki.floodreportapp.ui.profile.ProfileFragment"
@@ -19,7 +26,13 @@
         android:id="@+id/createReportFragment"
         android:name="com.riezki.floodreportapp.ui.report.create.CreateReportFragment"
         android:label="fragment_create_report"
-        tools:layout="@layout/fragment_create_report" />
+        tools:layout="@layout/fragment_create_report" >
+        <action
+            android:id="@+id/action_createReportFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/createReportFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/listReportFragment"
         android:name="com.riezki.floodreportapp.ui.report.list.ListReportFragment"
